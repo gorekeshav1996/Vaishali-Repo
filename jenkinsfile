@@ -45,7 +45,7 @@ pipeline {
                    steps {
                       script {
                          withCredentials([string(credentialsId: 'docker-keshav-cred', variable: 'docker-keshav-cred')]){
-                         sh 'docker login -u gorekeshav6/vaishalirepo -p ${docker-keshav-cred}'
+                         sh 'docker login -u gorekeshav6 -p ${docker-keshav-cred}'
                          echo "Push Docker Image to DockerHub : In Progress"
                          sh 'docker push gorekeshav6/vaishalirepo:latest'
                          echo "Push Docker Image to DockerHub : In Progress"
