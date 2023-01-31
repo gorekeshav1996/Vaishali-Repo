@@ -30,8 +30,8 @@ pipeline {
          stage('Building & Tag Docker Image') {
             steps {
                 echo 'Starting Building Docker Image'
-                sh 'docker build -t gorekeshav6/vaishalirepo .'
-                sh 'docker build -t vaishalirepo .'
+                sh 'docker build -t gorekeshav6/vaishali-s3 .'
+                sh 'docker build -t vaishali-s3 .'
                 echo 'Completed  Building Docker Image'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
                          withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                          sh 'docker login -u gorekeshav6 -p ${dockerhubCred}'
                          echo "Push Docker Image to DockerHub : In Progress"
-                         sh 'docker push gorekeshav6/vaishalirepo:latest'
+                         sh 'docker push gorekeshav6/vaishali-s3:latest'
                          echo "Push Docker Image to DockerHub : In Progress"
                          sh 'whoami'
                          }
