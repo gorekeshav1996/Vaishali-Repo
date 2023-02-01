@@ -59,10 +59,10 @@ pipeline {
               steps {
                script {
                   withCredentials([usernamePassword(credentialsId: 'nexus-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                 sh 'docker login http://43.205.243.53:8085/repository/vaishli-s3/ -u admin -p ${PASSWORD}'
+                 sh 'docker login http://43.205.243.53:8085/repository/vaishali-s3/ -u admin -p ${PASSWORD}'
                  echo "Push Docker Image to Nexus : In Progress"
-                 sh 'docker tag vaishali-s3 43.205.243.53:8085/vaishli-s3:latest'
-                 sh 'docker push 43.205.243.53:8085/vaishli-s3'
+                 sh 'docker tag vaishali-s3 43.205.243.53:8085/vaishali-s3:latest'
+                 sh 'docker push 43.205.243.53:8085/vaishali-s3'
                  echo "Push Docker Image to Nexus : Completed"
                  }
               }
